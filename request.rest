@@ -1,3 +1,19 @@
+### 
+# @prompt username
+# @prompt password
+# @name login
+POST http://localhost:8000/token/
+Content-Type: application/json
+
+{
+    "username": "{{username}}",
+    "password": "{{password}}"
+}
+
+
+####
+# @name call_api
 GET http://localhost:8000
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjgzMTg1MzYzLCJpYXQiOjE2ODMxODUwNjMsImp0aSI6IjAzMTk4YjE5NDA1NzQ2M2RhNjNhZGI3ZDFkY2Q4ZTY3IiwidXNlcl9pZCI6MX0.n_ln8rNLt8k_iG8q36Fi_8PNyGJKT9hAyg92hKi6MtI
+Authorization: Bearer {{login.response.body.access}}
+

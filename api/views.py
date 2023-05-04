@@ -6,5 +6,6 @@ from rest_framework.permissions import IsAuthenticated
 @permission_classes([IsAuthenticated])
 def Home(request):
     return Response({
-        "status": True
+        "status": True,
+        "messages": "login success"
     })
